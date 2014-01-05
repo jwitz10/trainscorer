@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Train Scorer</string>
+    <string name="action_settings">Settings</string>
+    <string name="player">Player</string>
+    <string name="player1">0</string>
+    <string name="player2">0</string>
+    <string name="player3">0</string>
+    <string name="player4">0</string>
+    <string name="player5">0</string>
+    <string name="player6">0</string>
+    <string name="trains">Trains</string>
+    <string name="train1">1 train\n(+1)</string>
+    <string name="train2">2 trains\n(+2)</string>
+    <string name="train3">3 trains\n(+3)</string>
+    <string name="train4">4 trains\n(+7)</string>
+    <string name="train5">5 trains\n(+10)</string>
+    <string name="train6">6 trains\n(+15)</string>
+    <string name="train7">7 trains\n(+18)</string>
+    <string name="train8">8 trains\n(+21)</string>
+    <string name="train9">9 trains\n(+27)</string>
+    <string name="tickets">Tickets / Merchandise</string>
+    <string name="ticket1">+1</string>
+    <string name="ticket2">+2</string>
+    <string name="ticket3">+3</string>
+    <string name="ticket4">+4</string>
+    <string name="ticket5">+5</string>
+    <string name="ticket6">+6</string>
+    <string name="ticket7">+7</string>
+    <string name="ticket8">+8</string>
+    <string name="ticket9">+9</string>
+    <string name="ticket10">+10</string>
+    <string name="ticket11">+11</string>
+    <string name="ticket12">+12</string>
+    <string name="ticket13">+13</string>
+    <string name="ticket14">+14</string>
+    <string name="ticket15">+15</string>
+    <string name="ticket16">+16</string>
+    <string name="ticket17">+17</string>
+    <string name="ticket18">+18</string>
+    <string name="ticket19">+19</string>
+    <string name="ticket20">+20</string>
+    <string name="ticket21">+21</string>
+    <string name="ticket22">+22</string>
+    <string name="ticket23">+23</string>
+    <string name="ticket24">+24</string>
+    <string name="ticket25">+25</string>
+    <string name="minus">-</string>
+    <string name="bonus">Bonus</string>
+    <string name="longestRoute">Longest Route\n(+10)</string>
+    <string name="globetrotter">GlobeTrotter\n(+10)</string>
+    <string name="trainStations">Train Station\n(+4)</string>
+    <string name="clear">New Game</string>
+</resources>
