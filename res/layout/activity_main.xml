@@ -480,9 +480,9 @@
             android:id="@+id/minusButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/globeTrotterButton"
+            android:layout_alignBottom="@+id/globeTrotterButton"
             android:layout_toRightOf="@+id/globeTrotterButton"
-            android:background="@color/red"
+            android:background="@drawable/red_button"
             android:text="@string/minus"
             android:textColor="@color/white"
             android:textSize="28sp" />
@@ -491,11 +491,12 @@
             android:id="@+id/clearButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/trainStationButton"
-            android:layout_alignLeft="@+id/minusButton"
+            android:layout_alignBaseline="@+id/trainStationButton"
+            android:layout_toRightOf="@+id/trainStationButton"
             android:layout_alignRight="@+id/minusButton"
-            android:background="@color/green"
+            android:background="@drawable/green_button"
             android:text="@string/clear"
+            android:textSize="14sp"
             android:textColor="@color/white" />
 
     </RelativeLayout>

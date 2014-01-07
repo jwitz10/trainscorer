@@ -85,10 +85,10 @@ public class MainActivity extends Activity implements OnClickListener {
          String newText;
          if(minus){
              newText = text.replace("-", "+");
-             button.setBackgroundColor(getResources().getColor(R.color.green));
+             button.setBackground(getResources().getDrawable(R.drawable.green_button));
          }else {
              newText = text.replace("+", "-");
-             button.setBackgroundColor(getResources().getColor(R.color.red));
+             button.setBackground(getResources().getDrawable(R.drawable.red_button));
          }
          button.setText(newText);
     }
@@ -297,8 +297,12 @@ public class MainActivity extends Activity implements OnClickListener {
                         for(Button player : _playerScoreMap.keySet()) {
                             player.setText(String.valueOf(0));
                         }
-                        updateUnSelectedButton(_playerSelected.getId());
-                        updateUnSelectedButton(_lastPlayerSelected.getId());
+                        if(_playerSelected != null) {
+                            updateUnSelectedButton(_playerSelected.getId());
+                        }
+                        if(_lastPlayerSelected != null) {
+                            updateUnSelectedButton(_lastPlayerSelected.getId());
+                        }
                         _playerScoreMap = new HashMap<Button, Integer>();
                         _playerScore = 0;
                         _playerSelected = null;
