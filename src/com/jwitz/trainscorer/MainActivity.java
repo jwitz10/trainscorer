@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -99,6 +99,56 @@ public class MainActivity extends Activity implements OnClickListener {
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
+    
+    private void updateSelectedButton(int viewID) {    
+        Drawable shape = null;
+        switch(viewID) {
+        case R.id.firstPlayerButton:
+            shape = getResources().getDrawable(R.drawable.red_button_selected);
+            break;
+        case R.id.secondPlayerButton:
+            shape = getResources().getDrawable(R.drawable.green_button_selected);
+            break;
+        case R.id.thirdPlayerButton:
+            shape = getResources().getDrawable(R.drawable.blue_button_selected);
+            break;
+        case R.id.fourthPlayerButton:
+            shape = getResources().getDrawable(R.drawable.yellow_button_selected);
+            break;
+        case R.id.fifthPlayerButton:
+            shape = getResources().getDrawable(R.drawable.purple_button_selected);
+            break;
+        case R.id.sixthPlayerButton:
+            shape = getResources().getDrawable(R.drawable.black_button_selected);
+            break;
+        }
+        _playerSelected.setBackground(shape);
+    }
+    
+    private void updateUnSelectedButton(int viewID) {
+        Drawable shape = null;
+        switch(viewID) {
+        case R.id.firstPlayerButton:
+            shape = getResources().getDrawable(R.drawable.red_button);
+            break;
+        case R.id.secondPlayerButton:
+            shape = getResources().getDrawable(R.drawable.green_button);
+            break;
+        case R.id.thirdPlayerButton:
+            shape = getResources().getDrawable(R.drawable.blue_button);
+            break;
+        case R.id.fourthPlayerButton:
+            shape = getResources().getDrawable(R.drawable.yellow_button);
+            break;
+        case R.id.fifthPlayerButton:
+            shape = getResources().getDrawable(R.drawable.purple_button);
+            break;
+        case R.id.sixthPlayerButton:
+            shape = getResources().getDrawable(R.drawable.black_button);
+            break;
+        }
+        _lastPlayerSelected.setBackground(shape);
+    }
 
     @Override
     public void onClick(View v) {
@@ -110,13 +160,13 @@ public class MainActivity extends Activity implements OnClickListener {
         case R.id.fifthPlayerButton:
         case R.id.sixthPlayerButton:
             _playerSelected = (Button) findViewById(v.getId());
-            _playerSelected.setTypeface(null, Typeface.BOLD_ITALIC);
             _playerScore = _playerScoreMap.get(_playerSelected);
             if(_playerScore == null) {
                 _playerScore = 0;
-            }
+            }           
+            updateSelectedButton(_playerSelected.getId());
             if(_lastPlayerSelected != null) {
-                _lastPlayerSelected.setTypeface(null, Typeface.NORMAL);
+                updateUnSelectedButton(_lastPlayerSelected.getId());
             }
             _lastPlayerSelected = _playerSelected;
             break;
@@ -246,8 +296,9 @@ public class MainActivity extends Activity implements OnClickListener {
                         //Yes button clicked
                         for(Button player : _playerScoreMap.keySet()) {
                             player.setText(String.valueOf(0));
-                            player.setTypeface(null, Typeface.NORMAL);
                         }
+                        updateUnSelectedButton(_playerSelected.getId());
+                        updateUnSelectedButton(_lastPlayerSelected.getId());
                         _playerScoreMap = new HashMap<Button, Integer>();
                         _playerScore = 0;
                         _playerSelected = null;
