@@ -165,7 +165,7 @@ public class MainActivity extends Activity implements OnClickListener {
                 _playerScore = 0;
             }           
             updateSelectedButton(_playerSelected.getId());
-            if(_lastPlayerSelected != null) {
+            if(_lastPlayerSelected != null && _playerSelected != _lastPlayerSelected) {
                 updateUnSelectedButton(_lastPlayerSelected.getId());
             }
             _lastPlayerSelected = _playerSelected;
