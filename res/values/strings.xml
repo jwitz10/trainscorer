@@ -47,7 +47,7 @@
     <string name="ticket24">+24</string>
     <string name="ticket25">+25</string>
     <string name="minus">-</string>
-    <string name="plus">+</string>
+    <string name="manualentry">Manual Entry</string>
     <string name="bonus">Bonus</string>
     <string name="longestRoute">Longest Route\n(+10)</string>
     <string name="globetrotter">GlobeTrotter\n(+10)</string>

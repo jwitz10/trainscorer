@@ -47,8 +47,7 @@ public final class R {
     }
     public static final class id {
         public static final int ScoresScrollView=0x7f090000;
-        public static final int action_settings=0x7f090030;
-        public static final int addButton=0x7f09002f;
+        public static final int action_settings=0x7f09002f;
         public static final int bonusText=0x7f090024;
         public static final int clearButton=0x7f09002d;
         public static final int fifthPlayerButton=0x7f09001f;
@@ -56,7 +55,7 @@ public final class R {
         public static final int fourthPlayerButton=0x7f090005;
         public static final int globeTrotterButton=0x7f09002b;
         public static final int longestRouteButton=0x7f090023;
-        public static final int manualAdditionAmount=0x7f09002e;
+        public static final int manualButton=0x7f09002e;
         public static final int minusButton=0x7f09002c;
         public static final int playerText=0x7f090001;
         public static final int secondPlayerButton=0x7f090003;
@@ -109,6 +108,7 @@ public final class R {
         public static final int clear=0x7f060033;
         public static final int globetrotter=0x7f060031;
         public static final int longestRoute=0x7f060030;
+        public static final int manualentry=0x7f06002e;
         public static final int minus=0x7f06002d;
         public static final int player=0x7f060002;
         public static final int player1=0x7f060003;
@@ -117,7 +117,6 @@ public final class R {
         public static final int player4=0x7f060006;
         public static final int player5=0x7f060007;
         public static final int player6=0x7f060008;
-        public static final int plus=0x7f06002e;
         public static final int ticket1=0x7f060014;
         public static final int ticket10=0x7f06001d;
         public static final int ticket11=0x7f06001e;

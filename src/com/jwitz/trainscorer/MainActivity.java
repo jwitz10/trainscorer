@@ -12,7 +12,7 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.TextView;
+import android.widget.EditText;
 
 public class MainActivity extends Activity implements OnClickListener {
 
@@ -54,7 +54,7 @@ public class MainActivity extends Activity implements OnClickListener {
     private void setupListenersForTickets() {
         int[] ids = {R.id.ticket1Button, R.id.ticket2Button, R.id.ticket3Button, R.id.ticket4Button, R.id.ticket5Button, R.id.ticket6Button, R.id.ticket7Button, R.id.ticket8Button, R.id.ticket9Button,
                 R.id.ticket10Button, R.id.ticket11Button, R.id.ticket12Button, R.id.ticket13Button, R.id.ticket14Button, R.id.ticket15Button, R.id.ticket16Button, R.id.ticket17Button,
-                R.id.ticket18Button, R.id.ticket19Button, R.id.ticket20Button, R.id.ticket21Button, R.id.ticket22Button, R.id.minusButton, R.id.manualAdditionAmount, R.id.addButton};
+                R.id.ticket18Button, R.id.ticket19Button, R.id.ticket20Button, R.id.ticket21Button, R.id.ticket22Button, R.id.minusButton, R.id.manualButton};
         for(int i = 0; i<ids.length; i++) {
             View v = findViewById(ids[i]);
             v.setOnClickListener(this);
@@ -64,7 +64,7 @@ public class MainActivity extends Activity implements OnClickListener {
     private void convertSignage(boolean minus) {
         int[] ids = {R.id.ticket1Button, R.id.ticket2Button, R.id.ticket3Button, R.id.ticket4Button, R.id.ticket5Button, R.id.ticket6Button, R.id.ticket7Button, R.id.ticket8Button, R.id.ticket9Button,
                 R.id.ticket10Button, R.id.ticket11Button, R.id.ticket12Button, R.id.ticket13Button, R.id.ticket14Button, R.id.ticket15Button, R.id.ticket16Button, R.id.ticket17Button,
-                R.id.ticket18Button, R.id.ticket19Button, R.id.ticket20Button, R.id.ticket21Button, R.id.ticket22Button, 
+                R.id.ticket18Button, R.id.ticket19Button, R.id.ticket20Button, R.id.ticket21Button, R.id.ticket22Button, R.id.manualButton,
                 R.id.trains1Button, R.id.trains2Button, R.id.trains3Button, R.id.trains4Button, R.id.trains5Button, R.id.trains6Button, R.id.trains8Button, R.id.trains9Button};
         for(int i = 0; i<ids.length; i++) {
             Button button = (Button) findViewById(ids[i]);
@@ -83,10 +83,6 @@ public class MainActivity extends Activity implements OnClickListener {
         //minus needs to go from red -> green and minus -> plus to indicate to switch back
         Button button = (Button) findViewById(R.id.minusButton);
         convertButton(button, minus);
-
-        //minus needs to go from red -> green and minus -> plus to indicate to switch back
-        button = (Button) findViewById(R.id.addButton);
-        convertButton(button, !minus);
     }
 
     private void convertButton(Button button, boolean minus) {
@@ -269,14 +265,25 @@ public class MainActivity extends Activity implements OnClickListener {
         case R.id.ticket22Button:
             if(!_subtractionMode) { _playerScore += 22; } else { _playerScore -= 22; }
             break;
-        case R.id.addButton:
-            TextView view = (TextView) findViewById(R.id.manualAdditionAmount);
-            String manualAmount = view.getText().toString();
-            if(manualAmount != null && !manualAmount.isEmpty()) {
-                int intAmount = Integer.parseInt(manualAmount);
-                if(!_subtractionMode) { _playerScore += intAmount; } else { _playerScore -= intAmount; }
-                view.setText(null);
-            }
+        case R.id.manualButton:
+            AlertDialog.Builder ticketScoreAlert = new AlertDialog.Builder(this);
+            ticketScoreAlert.setMessage("Ticket Score");
+            
+            final EditText input = new EditText(this);
+            //input.setInputType(type);
+            ticketScoreAlert.setView(input);
+            ticketScoreAlert.setPositiveButton("Done", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int whichButton) {
+                    String value = input.getText().toString();
+                    int additionValue = Integer.parseInt(value);
+                    if(!_subtractionMode) { _playerScore += additionValue; } else { _playerScore -= additionValue; }
+                    updateScores();
+                }
+            }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int whichButton) {
+                    // do nothing
+                }
+            }).show();
             break;
         case R.id.globeTrotterButton:
             _playerScore += 10;
@@ -297,7 +304,6 @@ public class MainActivity extends Activity implements OnClickListener {
                 //set all the values back to original values
                 convertSignage(false);
             }
-
             break;
         case R.id.clearButton:
             DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
@@ -329,7 +335,13 @@ public class MainActivity extends Activity implements OnClickListener {
 
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setMessage("Are you sure?").setPositiveButton("Yes", dialogClickListener).setNegativeButton("No", dialogClickListener).show();
+            break;
         }
+        
+        updateScores();
+    }
+    
+    private void updateScores() {
         if(_playerSelected != null) {
             _playerSelected.setText(String.valueOf(_playerScore));
             _playerScoreMap.put(_playerSelected, _playerScore);
