@@ -6,13 +6,19 @@ import java.util.Map;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.drawable.Drawable;
+import android.text.InputType;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends Activity implements OnClickListener {
 
@@ -268,22 +274,39 @@ public class MainActivity extends Activity implements OnClickListener {
         case R.id.manualButton:
             AlertDialog.Builder ticketScoreAlert = new AlertDialog.Builder(this);
             ticketScoreAlert.setMessage("Ticket Score");
-            
+
             final EditText input = new EditText(this);
-            //input.setInputType(type);
+            input.setInputType(InputType.TYPE_CLASS_NUMBER);
+            input.setFocusableInTouchMode(true);
+            input.setFocusable(true);
+            input.requestFocus();
             ticketScoreAlert.setView(input);
-            ticketScoreAlert.setPositiveButton("Done", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int whichButton) {
-                    String value = input.getText().toString();
-                    int additionValue = Integer.parseInt(value);
-                    if(!_subtractionMode) { _playerScore += additionValue; } else { _playerScore -= additionValue; }
-                    updateScores();
-                }
-            }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int whichButton) {
-                    // do nothing
-                }
-            }).show();
+            
+            final AlertDialog alert = ticketScoreAlert.create();
+
+            // done button on numberpad means the same thing as on the alert
+            input.setOnEditorActionListener(
+                    new EditText.OnEditorActionListener() {
+                        @Override
+                        public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                            if (actionId == EditorInfo.IME_ACTION_DONE || event.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
+                                String value = input.getText().toString();
+                                int additionValue = Integer.parseInt(value);
+                                if(!_subtractionMode) { _playerScore += additionValue; } else { _playerScore -= additionValue; }
+                                updateScores();
+                                alert.dismiss();
+                                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                                imm.toggleSoftInput(InputMethodManager.HIDE_NOT_ALWAYS,0);
+                                return true; // consume.
+                            }
+                            return false; // pass on to other listeners. 
+                        }
+                    });
+
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.toggleSoftInput(InputMethodManager.SHOW_FORCED,0);
+
+            alert.show();
             break;
         case R.id.globeTrotterButton:
             _playerScore += 10;
@@ -337,10 +360,10 @@ public class MainActivity extends Activity implements OnClickListener {
             builder.setMessage("Are you sure?").setPositiveButton("Yes", dialogClickListener).setNegativeButton("No", dialogClickListener).show();
             break;
         }
-        
+
         updateScores();
     }
-    
+
     private void updateScores() {
         if(_playerSelected != null) {
             _playerSelected.setText(String.valueOf(_playerScore));
