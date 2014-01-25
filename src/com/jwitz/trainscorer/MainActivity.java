@@ -8,8 +8,10 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.text.InputType;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
@@ -50,7 +52,7 @@ public class MainActivity extends Activity implements OnClickListener {
     }
 
     private void setupListenersForBonuses() {
-        int[] ids = {R.id.longestRouteButton, R.id.globeTrotterButton, R.id.trainStationButton, R.id.clearButton};
+        int[] ids = {R.id.longestRouteButton, R.id.globeTrotterButton, R.id.trainStationButton, R.id.clearButton, R.id.reviewButton};
         for(int i = 0; i<ids.length; i++) {
             View v = findViewById(ids[i]);
             v.setOnClickListener(this);
@@ -171,10 +173,10 @@ public class MainActivity extends Activity implements OnClickListener {
         case R.id.fifthPlayerButton:
         case R.id.sixthPlayerButton:
             _playerSelected = (Button) findViewById(v.getId());
-            _playerScore = _playerScoreMap.get(_playerSelected);
-            if(_playerScore == null) {
-                _playerScore = 0;
-            }           
+            _scoreSummary = _playerScoreMap.get(_playerSelected);
+            if(_scoreSummary == null) {
+                _scoreSummary = new ScoreSummary();
+            }      
             updateSelectedButton(_playerSelected.getId());
             if(_lastPlayerSelected != null && _playerSelected != _lastPlayerSelected) {
                 updateUnSelectedButton(_lastPlayerSelected.getId());
@@ -182,94 +184,94 @@ public class MainActivity extends Activity implements OnClickListener {
             _lastPlayerSelected = _playerSelected;
             break;
         case R.id.trains1Button:
-            if(!_subtractionMode) { _playerScore += 1; } else { _playerScore -= 1; }
+            if(!_subtractionMode) { _scoreSummary.updateTrains(1); } else { _scoreSummary.updateTrains(-1); }
             break;
         case R.id.trains2Button:
-            if(!_subtractionMode) { _playerScore += 2; } else { _playerScore -= 2; }
+            if(!_subtractionMode) { _scoreSummary.updateTrains(2); } else { _scoreSummary.updateTrains(-2); }
             break;
         case R.id.trains3Button:
-            if(!_subtractionMode) { _playerScore += 4; } else { _playerScore -= 4; }
+            if(!_subtractionMode) { _scoreSummary.updateTrains(3); } else { _scoreSummary.updateTrains(-3); }
             break;
         case R.id.trains4Button:
-            if(!_subtractionMode) { _playerScore += 7; } else { _playerScore -= 7; }
+            if(!_subtractionMode) { _scoreSummary.updateTrains(4); } else { _scoreSummary.updateTrains(-4); }
             break;
         case R.id.trains5Button:
-            if(!_subtractionMode) { _playerScore += 10; } else { _playerScore -= 10; }
+            if(!_subtractionMode) { _scoreSummary.updateTrains(5); } else { _scoreSummary.updateTrains(-5); }
             break;
         case R.id.trains6Button:
-            if(!_subtractionMode) { _playerScore += 15; } else { _playerScore -= 15; }
+            if(!_subtractionMode) { _scoreSummary.updateTrains(6); } else { _scoreSummary.updateTrains(-6); }
             break;
         case R.id.trains8Button:
-            if(!_subtractionMode) { _playerScore += 21; } else { _playerScore -= 21; }
+            if(!_subtractionMode) { _scoreSummary.updateTrains(8); } else { _scoreSummary.updateTrains(-8); }
             break;
         case R.id.trains9Button:
-            if(!_subtractionMode) { _playerScore += 27; } else { _playerScore -= 27; }
+            if(!_subtractionMode) { _scoreSummary.updateTrains(9); } else { _scoreSummary.updateTrains(-9); }
             break;
         case R.id.ticket1Button:
-            if(!_subtractionMode) { _playerScore += 1; } else { _playerScore -= 1; }
+            if(!_subtractionMode) { _scoreSummary.updateTickets(1); } else { _scoreSummary.updateTickets(-1); }
             break;
         case R.id.ticket2Button:
-            if(!_subtractionMode) { _playerScore += 2; } else { _playerScore -= 2; }
+            if(!_subtractionMode) { _scoreSummary.updateTickets(2); } else { _scoreSummary.updateTickets(-2); }
             break;
         case R.id.ticket3Button:
-            if(!_subtractionMode) { _playerScore += 3; } else { _playerScore -= 3; }
+            if(!_subtractionMode) { _scoreSummary.updateTickets(3); } else { _scoreSummary.updateTickets(-3); }
             break;
         case R.id.ticket4Button:
-            if(!_subtractionMode) { _playerScore += 4; } else { _playerScore -= 4; }
+            if(!_subtractionMode) { _scoreSummary.updateTickets(4); } else { _scoreSummary.updateTickets(-4); }
             break;
         case R.id.ticket5Button:
-            if(!_subtractionMode) { _playerScore += 5; } else { _playerScore -= 5; }
+            if(!_subtractionMode) { _scoreSummary.updateTickets(5); } else { _scoreSummary.updateTickets(-5); }
             break;
         case R.id.ticket6Button:
-            if(!_subtractionMode) { _playerScore += 6; } else { _playerScore -= 6; }
+            if(!_subtractionMode) { _scoreSummary.updateTickets(6); } else { _scoreSummary.updateTickets(-6); }
             break;
         case R.id.ticket7Button:
-            if(!_subtractionMode) { _playerScore += 7; } else { _playerScore -= 7; }
+            if(!_subtractionMode) { _scoreSummary.updateTickets(7); } else { _scoreSummary.updateTickets(-7); }
             break;
         case R.id.ticket8Button:
-            if(!_subtractionMode) { _playerScore += 8; } else { _playerScore -= 8; }
+            if(!_subtractionMode) { _scoreSummary.updateTickets(8); } else { _scoreSummary.updateTickets(-8); }
             break;
         case R.id.ticket9Button:
-            if(!_subtractionMode) { _playerScore += 9; } else { _playerScore -= 9; }
+            if(!_subtractionMode) { _scoreSummary.updateTickets(9); } else { _scoreSummary.updateTickets(-9); }
             break;
         case R.id.ticket10Button:
-            if(!_subtractionMode) { _playerScore += 10; } else { _playerScore -= 10; }
+            if(!_subtractionMode) { _scoreSummary.updateTickets(10); } else { _scoreSummary.updateTickets(-10); }
             break;
         case R.id.ticket11Button:
-            if(!_subtractionMode) { _playerScore += 11; } else { _playerScore -= 11; }
+            if(!_subtractionMode) { _scoreSummary.updateTickets(11); } else { _scoreSummary.updateTickets(-11); }
             break;
         case R.id.ticket12Button:
-            if(!_subtractionMode) { _playerScore += 12; } else { _playerScore -= 12; }
+            if(!_subtractionMode) { _scoreSummary.updateTickets(12); } else { _scoreSummary.updateTickets(-12); }
             break;
         case R.id.ticket13Button:
-            if(!_subtractionMode) { _playerScore += 13; } else { _playerScore -= 13; }
+            if(!_subtractionMode) { _scoreSummary.updateTickets(13); } else { _scoreSummary.updateTickets(-13); }
             break;
         case R.id.ticket14Button:
-            if(!_subtractionMode) { _playerScore += 14; } else { _playerScore -= 14; }
+            if(!_subtractionMode) { _scoreSummary.updateTickets(14); } else { _scoreSummary.updateTickets(-14); }
             break;
         case R.id.ticket15Button:
-            if(!_subtractionMode) { _playerScore += 15; } else { _playerScore -= 15; }
+            if(!_subtractionMode) { _scoreSummary.updateTickets(15); } else { _scoreSummary.updateTickets(-15); }
             break;
         case R.id.ticket16Button:
-            if(!_subtractionMode) { _playerScore += 16; } else { _playerScore -= 16; }
+            if(!_subtractionMode) { _scoreSummary.updateTickets(16); } else { _scoreSummary.updateTickets(-16); }
             break;
         case R.id.ticket17Button:
-            if(!_subtractionMode) { _playerScore += 17; } else { _playerScore -= 17; }
+            if(!_subtractionMode) { _scoreSummary.updateTickets(17); } else { _scoreSummary.updateTickets(-17); }
             break;
         case R.id.ticket18Button:
-            if(!_subtractionMode) { _playerScore += 18; } else { _playerScore -= 18; }
+            if(!_subtractionMode) { _scoreSummary.updateTickets(18); } else { _scoreSummary.updateTickets(-18); }
             break;
         case R.id.ticket19Button:
-            if(!_subtractionMode) { _playerScore += 19; } else { _playerScore -= 19; }
+            if(!_subtractionMode) { _scoreSummary.updateTickets(19); } else { _scoreSummary.updateTickets(-19); }
             break;
         case R.id.ticket20Button:
-            if(!_subtractionMode) { _playerScore += 20; } else { _playerScore -= 20; }
+            if(!_subtractionMode) { _scoreSummary.updateTickets(20); } else { _scoreSummary.updateTickets(-20); }
             break;
         case R.id.ticket21Button:
-            if(!_subtractionMode) { _playerScore += 21; } else { _playerScore -= 21; }
+            if(!_subtractionMode) { _scoreSummary.updateTickets(21); } else { _scoreSummary.updateTickets(-21); }
             break;
         case R.id.ticket22Button:
-            if(!_subtractionMode) { _playerScore += 22; } else { _playerScore -= 22; }
+            if(!_subtractionMode) { _scoreSummary.updateTickets(22); } else { _scoreSummary.updateTickets(-22); }
             break;
         case R.id.manualButton:
             AlertDialog.Builder ticketScoreAlert = new AlertDialog.Builder(this);
@@ -292,7 +294,7 @@ public class MainActivity extends Activity implements OnClickListener {
                             if (actionId == EditorInfo.IME_ACTION_DONE || event.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
                                 String value = input.getText().toString();
                                 int additionValue = Integer.parseInt(value);
-                                if(!_subtractionMode) { _playerScore += additionValue; } else { _playerScore -= additionValue; }
+                                if(!_subtractionMode) { _scoreSummary.updateTickets(additionValue); } else { _scoreSummary.updateTickets(-additionValue); }
                                 updateScores();
                                 alert.dismiss();
                                 InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -309,13 +311,13 @@ public class MainActivity extends Activity implements OnClickListener {
             alert.show();
             break;
         case R.id.globeTrotterButton:
-            _playerScore += 10;
+            _scoreSummary.addGlobeTrotter();
             break;
         case R.id.longestRouteButton:
-            _playerScore += 10;
+            _scoreSummary.addLongestRoute();
             break;
         case R.id.trainStationButton:
-            _playerScore += 4;
+            _scoreSummary.addTrainStations();
             break;
         case R.id.minusButton:
             if(!_subtractionMode) {
@@ -344,8 +346,7 @@ public class MainActivity extends Activity implements OnClickListener {
                         if(_lastPlayerSelected != null) {
                             updateUnSelectedButton(_lastPlayerSelected.getId());
                         }
-                        _playerScoreMap = new HashMap<Button, Integer>();
-                        _playerScore = 0;
+                        _playerScoreMap = new HashMap<Button, ScoreSummary>();
                         _playerSelected = null;
                         _lastPlayerSelected = null;
                         break;
@@ -359,6 +360,11 @@ public class MainActivity extends Activity implements OnClickListener {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setMessage("Are you sure?").setPositiveButton("Yes", dialogClickListener).setNegativeButton("No", dialogClickListener).show();
             break;
+        case R.id.reviewButton:
+            Log.d("JUSTIN", "hit the review button");
+            Intent i = new Intent(this, ReviewActivity.class);
+            startActivity(i);
+            break;
         }
 
         updateScores();
@@ -366,14 +372,14 @@ public class MainActivity extends Activity implements OnClickListener {
 
     private void updateScores() {
         if(_playerSelected != null) {
-            _playerSelected.setText(String.valueOf(_playerScore));
-            _playerScoreMap.put(_playerSelected, _playerScore);
+            _playerSelected.setText(String.valueOf(_scoreSummary.getTotalScore()));
+            _playerScoreMap.put(_playerSelected, _scoreSummary);
         }
     }
 
     private boolean _subtractionMode = false;
     private Button _playerSelected = null;
     private Button _lastPlayerSelected = null;
-    private Integer _playerScore = 0;
-    private Map<Button, Integer> _playerScoreMap = new HashMap<Button, Integer>();
+    private ScoreSummary _scoreSummary = null;
+    private Map<Button, ScoreSummary> _playerScoreMap = new HashMap<Button, ScoreSummary>();
 }

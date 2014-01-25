@@ -53,4 +53,12 @@
     <string name="globetrotter">GlobeTrotter\n(+10)</string>
     <string name="trainStations">Train Station\n(+4)</string>
     <string name="clear">New Game</string>
+    <string name="review">Review</string>
+    <string name="reviewgame">Review Game</string>
+    <string name="title_activity_review">ReviewActivity</string>
+    <string name="overall">Overall</string>
+    <string name="train">Train</string>
+    <string name="ticket">Ticket</string>
+    <string name="scoreSummary">Score Summary</string>
+
 </resources>
