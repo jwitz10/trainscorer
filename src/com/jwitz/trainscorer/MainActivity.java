@@ -382,6 +382,6 @@ public class MainActivity extends Activity implements OnClickListener {
     private boolean _subtractionMode = false;
     private Button _playerSelected = null;
     private Button _lastPlayerSelected = null;
-    private ScoreSummary _scoreSummary = null;
+    private ScoreSummary _scoreSummary = new ScoreSummary(0);
     private static Map<Button, ScoreSummary> _playerScoreMap = new HashMap<Button, ScoreSummary>();
 }
