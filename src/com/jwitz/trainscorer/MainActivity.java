@@ -188,7 +188,7 @@ public class MainActivity extends Activity implements OnClickListener {
             if(!_subtractionMode) { _playerScore += 2; } else { _playerScore -= 2; }
             break;
         case R.id.trains3Button:
-            if(!_subtractionMode) { _playerScore += 3; } else { _playerScore -= 3; }
+            if(!_subtractionMode) { _playerScore += 4; } else { _playerScore -= 4; }
             break;
         case R.id.trains4Button:
             if(!_subtractionMode) { _playerScore += 7; } else { _playerScore -= 7; }
