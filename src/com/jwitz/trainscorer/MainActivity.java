@@ -11,7 +11,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.text.InputType;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
@@ -175,7 +174,7 @@ public class MainActivity extends Activity implements OnClickListener {
             _playerSelected = (Button) findViewById(v.getId());
             _scoreSummary = _playerScoreMap.get(_playerSelected);
             if(_scoreSummary == null) {
-                _scoreSummary = new ScoreSummary();
+                _scoreSummary = new ScoreSummary(v.getId());
             }      
             updateSelectedButton(_playerSelected.getId());
             if(_lastPlayerSelected != null && _playerSelected != _lastPlayerSelected) {
@@ -361,7 +360,6 @@ public class MainActivity extends Activity implements OnClickListener {
             builder.setMessage("Are you sure?").setPositiveButton("Yes", dialogClickListener).setNegativeButton("No", dialogClickListener).show();
             break;
         case R.id.reviewButton:
-            Log.d("JUSTIN", "hit the review button");
             Intent i = new Intent(this, ReviewActivity.class);
             startActivity(i);
             break;
@@ -376,10 +374,14 @@ public class MainActivity extends Activity implements OnClickListener {
             _playerScoreMap.put(_playerSelected, _scoreSummary);
         }
     }
+    
+    public static Map<Button, ScoreSummary> getPlayerScoreMap() {
+        return _playerScoreMap;
+    }
 
     private boolean _subtractionMode = false;
     private Button _playerSelected = null;
     private Button _lastPlayerSelected = null;
     private ScoreSummary _scoreSummary = null;
-    private Map<Button, ScoreSummary> _playerScoreMap = new HashMap<Button, ScoreSummary>();
+    private static Map<Button, ScoreSummary> _playerScoreMap = new HashMap<Button, ScoreSummary>();
 }

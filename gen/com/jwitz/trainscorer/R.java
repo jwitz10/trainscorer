@@ -48,6 +48,10 @@ public final class R {
     public static final class id {
         public static final int ScoresScrollView=0x7f090000;
         public static final int action_settings=0x7f090051;
+        public static final int blackBonusReview=0x7f090050;
+        public static final int blackReview=0x7f090038;
+        public static final int blackTicketReview=0x7f090048;
+        public static final int blackTrainReview=0x7f090040;
         public static final int blueBonusReview=0x7f09004d;
         public static final int blueReview=0x7f090035;
         public static final int blueTicketReview=0x7f090045;
@@ -55,10 +59,6 @@ public final class R {
         public static final int bonusScoreLabel=0x7f09004a;
         public static final int bonusText=0x7f090024;
         public static final int clearButton=0x7f09002d;
-        public static final int darkGrayBonusReview=0x7f090050;
-        public static final int darkGrayReview=0x7f090038;
-        public static final int darkGrayTicketReview=0x7f090048;
-        public static final int darkGrayTrainReview=0x7f090040;
         public static final int fifthPlayerButton=0x7f09001f;
         public static final int firstPlayerButton=0x7f090002;
         public static final int fourthPlayerButton=0x7f090005;

@@ -5,6 +5,10 @@ import java.util.List;
 
 public class ScoreSummary {
 
+    public ScoreSummary(int playerNumber) {
+        _playerNumber = playerNumber;
+    }
+    
     public int getTrainScore() {
         return _trainScore;
     }
@@ -88,6 +92,11 @@ public class ScoreSummary {
         return 0;
     }
     
+    public int getPlayerNumber() {
+        return _playerNumber;
+    }
+    
+    private int _playerNumber;
     private int _trainScore;
     private int _trains1;
     private int _trains2;
