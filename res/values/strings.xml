@@ -55,10 +55,19 @@
     <string name="clear">New Game</string>
     <string name="review">Review</string>
     <string name="reviewgame">Review Game</string>
-    <string name="title_activity_review">ReviewActivity</string>
     <string name="overall">Overall</string>
     <string name="train">Train</string>
     <string name="ticket">Ticket</string>
     <string name="scoreSummary">Score Summary</string>
+    <string name="trainSummary">Train Length Summary</string>
+    <string name="train1Summary">1 train</string>
+    <string name="train2Summary">2 train</string>
+    <string name="train3Summary">3 train</string>
+    <string name="train4Summary">4 train</string>
+    <string name="train5Summary">5 train</string>
+    <string name="train6Summary">6 train</string>
+    <string name="train7Summary">7 train</string>
+    <string name="train8Summary">8 train</string>
+    <string name="train9Summary">9 train</string>
 
 </resources>
