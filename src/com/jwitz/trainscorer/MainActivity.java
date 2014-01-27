@@ -292,13 +292,15 @@ public class MainActivity extends Activity implements OnClickListener {
                         public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                             if (actionId == EditorInfo.IME_ACTION_DONE || event.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
                                 String value = input.getText().toString();
-                                int additionValue = Integer.parseInt(value);
-                                if(!_subtractionMode) { _scoreSummary.updateTickets(additionValue); } else { _scoreSummary.updateTickets(-additionValue); }
-                                updateScores();
-                                alert.dismiss();
-                                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                                imm.toggleSoftInput(InputMethodManager.HIDE_NOT_ALWAYS,0);
-                                return true; // consume.
+                                if(!value.isEmpty()) {
+                                    int additionValue = Integer.parseInt(value);
+                                    if(!_subtractionMode) { _scoreSummary.updateTickets(additionValue); } else { _scoreSummary.updateTickets(-additionValue); }
+                                    updateScores();
+                                    alert.dismiss();
+                                    InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                                    imm.toggleSoftInput(InputMethodManager.HIDE_NOT_ALWAYS,0);
+                                    return true; // consume.
+                                }
                             }
                             return false; // pass on to other listeners. 
                         }
