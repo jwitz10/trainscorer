@@ -295,12 +295,12 @@ public class MainActivity extends Activity implements OnClickListener {
                                 if(!value.isEmpty()) {
                                     int additionValue = Integer.parseInt(value);
                                     if(!_subtractionMode) { _scoreSummary.updateTickets(additionValue); } else { _scoreSummary.updateTickets(-additionValue); }
-                                    updateScores();
-                                    alert.dismiss();
-                                    InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                                    imm.toggleSoftInput(InputMethodManager.HIDE_NOT_ALWAYS,0);
-                                    return true; // consume.
                                 }
+                                updateScores();
+                                alert.dismiss();
+                                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                                imm.toggleSoftInput(InputMethodManager.HIDE_NOT_ALWAYS,0);
+                                return true; // consume.
                             }
                             return false; // pass on to other listeners. 
                         }
