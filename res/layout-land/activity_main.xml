@@ -78,18 +78,6 @@
             android:textColor="@color/white" />
 
         <Button
-            android:id="@+id/trains8Button"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/ticketsText"
-            android:layout_alignBaseline="@+id/trains6Button"
-            android:layout_alignBottom="@+id/trains6Button"
-            android:layout_toRightOf="@+id/trains6Button"
-            android:text="@string/train8"
-            android:textColor="@color/white" />
-
-        <Button
             android:id="@+id/trains2Button"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
@@ -168,16 +156,6 @@
             android:layout_below="@+id/trainsText"
             android:layout_toRightOf="@+id/trains2Button"
             android:text="@string/train3"
-            android:textColor="@color/white" />
-
-        <Button
-            android:id="@+id/trains9Button"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/trains1Button"
-            android:layout_below="@+id/trains1Button"
-            android:text="@string/train9"
             android:textColor="@color/white" />
 
         <TextView
@@ -271,18 +249,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/bonusText"
-            android:layout_below="@id/ticket12Button"
+            android:layout_below="@id/ticket11Button"
             android:text="@string/ticket21"
-            android:textColor="@color/white" />
-
-        <Button
-            android:id="@+id/ticket19Button"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/bonusText"
-            android:layout_alignLeft="@+id/ticket9Button"
-            android:text="@string/ticket19"
             android:textColor="@color/white" />
 
         <Button
@@ -295,16 +263,6 @@
             android:text="@string/ticket11"
             android:textColor="@color/white" />
 
-        <TextView
-            android:id="@+id/bonusText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/ticket1Button"
-            android:layout_below="@+id/ticket11Button"
-            android:layout_marginTop="74dp"
-            android:text="@string/bonus"
-            android:textColor="@color/white" />
-
         <Button
             android:id="@+id/ticket2Button"
             style="?android:attr/buttonStyleSmall"
@@ -314,16 +272,6 @@
             android:layout_alignBottom="@+id/ticket1Button"
             android:layout_toRightOf="@+id/ticket1Button"
             android:text="@string/ticket2"
-            android:textColor="@color/white" />
-
-        <Button
-            android:id="@+id/ticket12Button"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/bonusText"
-            android:layout_toRightOf="@+id/ticket11Button"
-            android:text="@string/ticket12"
             android:textColor="@color/white" />
 
         <Button
@@ -357,28 +305,6 @@
             android:layout_toRightOf="@id/thirdPlayerButton"
             android:background="@drawable/yellow_button"
             android:text="@string/player4"
-            android:textColor="@color/white" />
-
-        <Button
-            android:id="@+id/ticket18Button"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/ticket19Button"
-            android:layout_alignBottom="@+id/ticket19Button"
-            android:layout_toLeftOf="@+id/ticket19Button"
-            android:text="@string/ticket18"
-            android:textColor="@color/white" />
-
-        <Button
-            android:id="@+id/ticket17Button"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/ticket18Button"
-            android:layout_alignBottom="@+id/ticket18Button"
-            android:layout_toLeftOf="@+id/ticket18Button"
-            android:text="@string/ticket17"
             android:textColor="@color/white" />
 
         <Button
@@ -422,16 +348,6 @@
             android:textColor="@color/white" />
 
         <Button
-            android:id="@+id/ticket6Button"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/ticket17Button"
-            android:layout_toRightOf="@+id/ticket5Button"
-            android:text="@string/ticket6"
-            android:textColor="@color/white" />
-
-        <Button
             android:id="@+id/ticket4Button"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
@@ -462,46 +378,6 @@
             android:textColor="@color/white" />
 
         <Button
-            android:id="@+id/ticket7Button"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/ticket17Button"
-            android:layout_toRightOf="@+id/ticket6Button"
-            android:text="@string/ticket7"
-            android:textColor="@color/white" />
-
-        <Button
-            android:id="@+id/ticket8Button"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/ticket18Button"
-            android:layout_toRightOf="@+id/ticket7Button"
-            android:text="@string/ticket8"
-            android:textColor="@color/white" />
-
-        <Button
-            android:id="@+id/ticket9Button"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/ticket19Button"
-            android:layout_toRightOf="@+id/ticket8Button"
-            android:text="@string/ticket9"
-            android:textColor="@color/white" />
-
-        <Button
-            android:id="@+id/ticket10Button"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/ticket20Button"
-            android:layout_toRightOf="@+id/ticket19Button"
-            android:text="@string/ticket10"
-            android:textColor="@color/white" />
-
-        <Button
             android:id="@+id/manualButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -513,6 +389,129 @@
             android:text="@string/manualentry"
             android:textColor="@color/white"
             android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/trains8Button"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/trains1Button"
+            android:layout_below="@+id/trains1Button"
+            android:layout_toLeftOf="@+id/trains4Button"
+            android:text="@string/train8"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/trains9Button"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/trains8Button"
+            android:layout_alignBottom="@+id/trains8Button"
+            android:layout_alignLeft="@+id/trains4Button"
+            android:layout_alignRight="@+id/trains6Button"
+            android:text="@string/train9"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/bonusText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/longestRouteButton"
+            android:layout_below="@+id/ticket21Button"
+            android:text="@string/bonus"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/ticket6Button"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/sixthPlayerButton"
+            android:layout_below="@+id/ticketsText"
+            android:text="@string/ticket6"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/ticket7Button"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/ticket16Button"
+            android:layout_toRightOf="@+id/ticket6Button"
+            android:text="@string/ticket7"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/ticket8Button"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ticketsText"
+            android:layout_toRightOf="@+id/ticket7Button"
+            android:text="@string/ticket8"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/ticket10Button"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/ticket16Button"
+            android:layout_toRightOf="@+id/ticket9Button"
+            android:text="@string/ticket10"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/ticket9Button"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ticketsText"
+            android:layout_toRightOf="@+id/ticket8Button"
+            android:text="@string/ticket9"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/ticket12Button"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/ticket21Button"
+            android:layout_toRightOf="@+id/ticket21Button"
+            android:text="@string/ticket12"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/ticket17Button"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/manualButton"
+            android:layout_alignLeft="@+id/ticket7Button"
+            android:text="@string/ticket17"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/ticket18Button"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/ticket17Button"
+            android:layout_alignBottom="@+id/ticket17Button"
+            android:layout_alignLeft="@+id/ticket8Button"
+            android:text="@string/ticket18"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/ticket19Button"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/ticket9Button"
+            android:layout_below="@+id/ticket9Button"
+            android:text="@string/ticket19"
+            android:textColor="@color/white" />
 
     </RelativeLayout>
 
