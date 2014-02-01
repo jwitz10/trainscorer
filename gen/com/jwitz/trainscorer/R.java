@@ -28,7 +28,9 @@ public final class R {
     
          */
         public static final int activity_horizontal_margin=0x7f050000;
+        public static final int activity_horizontal_margin_tablet=0x7f050002;
         public static final int activity_vertical_margin=0x7f050001;
+        public static final int activity_vertical_margin_tablet=0x7f050003;
     }
     public static final class drawable {
         public static final int black_button=0x7f020000;

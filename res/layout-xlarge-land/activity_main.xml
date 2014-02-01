@@ -27,7 +27,7 @@
             android:minWidth="100dp"
             android:text="@string/player2"
             android:textColor="@color/white"
-android:textSize="28sp" />
+            android:textSize="28sp" />
 
         <Button
             android:id="@+id/thirdPlayerButton"
@@ -41,7 +41,7 @@ android:textSize="28sp" />
             android:minWidth="100dp"
             android:text="@string/player3"
             android:textColor="@color/white"
-android:textSize="28sp" />
+            android:textSize="28sp" />
 
         <TextView
             android:id="@+id/trainsText"
@@ -51,7 +51,7 @@ android:textSize="28sp" />
             android:layout_below="@+id/firstPlayerButton"
             android:text="@string/trains"
             android:textColor="@color/white"
-android:textSize="28sp" />
+            android:textSize="28sp" />
 
         <Button
             android:id="@+id/trains1Button"
@@ -64,7 +64,7 @@ android:textSize="28sp" />
             android:minWidth="100dp"
             android:text="@string/train1"
             android:textColor="@color/white"
-android:textSize="28sp" />
+            android:textSize="28sp" />
 
         <Button
             android:id="@+id/trains2Button"
@@ -78,7 +78,7 @@ android:textSize="28sp" />
             android:minWidth="100dp"
             android:text="@string/train2"
             android:textColor="@color/white"
-android:textSize="28sp" />
+            android:textSize="28sp" />
 
         <Button
             android:id="@+id/trains4Button"
@@ -91,7 +91,7 @@ android:textSize="28sp" />
             android:minWidth="100dp"
             android:text="@string/train4"
             android:textColor="@color/white"
-android:textSize="28sp" />
+            android:textSize="28sp" />
 
         <Button
             android:id="@+id/ticket1Button"
@@ -104,7 +104,7 @@ android:textSize="28sp" />
             android:minWidth="100dp"
             android:text="@string/ticket1"
             android:textColor="@color/white"
-android:textSize="28sp" />
+            android:textSize="28sp" />
 
         <TextView
             android:id="@+id/reviewText"
@@ -113,7 +113,7 @@ android:textSize="28sp" />
             android:layout_below="@+id/trainStationButton"
             android:text="@string/review"
             android:textColor="@color/white"
-android:textSize="28sp" />
+            android:textSize="28sp" />
 
         <Button
             android:id="@+id/reviewButton"
@@ -121,13 +121,13 @@ android:textSize="28sp" />
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/reviewText"
-            android:layout_alignRight="@+id/clearButton"
+            android:layout_alignRight="@+id/ticket20Button"
             android:layout_below="@+id/reviewText"
             android:minHeight="100dp"
             android:minWidth="100dp"
             android:text="@string/reviewgame"
             android:textColor="@color/white"
-android:textSize="28sp" />
+            android:textSize="28sp" />
 
         <Button
             android:id="@+id/trains5Button"
@@ -141,7 +141,7 @@ android:textSize="28sp" />
             android:minWidth="100dp"
             android:text="@string/train5"
             android:textColor="@color/white"
-android:textSize="28sp" />
+            android:textSize="28sp" />
 
         <Button
             android:id="@+id/trains6Button"
@@ -154,7 +154,7 @@ android:textSize="28sp" />
             android:minWidth="100dp"
             android:text="@string/train6"
             android:textColor="@color/white"
-android:textSize="28sp" />
+            android:textSize="28sp" />
 
         <Button
             android:id="@+id/trains3Button"
@@ -167,7 +167,7 @@ android:textSize="28sp" />
             android:minWidth="100dp"
             android:text="@string/train3"
             android:textColor="@color/white"
-android:textSize="28sp" />
+            android:textSize="28sp" />
 
         <TextView
             android:id="@+id/ticketsText"
@@ -177,7 +177,7 @@ android:textSize="28sp" />
             android:layout_below="@+id/trains9Button"
             android:text="@string/tickets"
             android:textColor="@color/white"
-android:textSize="28sp" />
+            android:textSize="28sp" />
 
         <Button
             android:id="@+id/ticket22Button"
@@ -191,7 +191,7 @@ android:textSize="28sp" />
             android:minWidth="100dp"
             android:text="@string/ticket22"
             android:textColor="@color/white"
-android:textSize="28sp" />
+            android:textSize="28sp" />
 
         <Button
             android:id="@+id/longestRouteButton"
@@ -199,70 +199,13 @@ android:textSize="28sp" />
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/reviewText"
-            android:layout_alignRight="@+id/ticket2Button"
+            android:layout_alignRight="@+id/thirdPlayerButton"
             android:layout_below="@+id/bonusText"
             android:minHeight="100dp"
             android:minWidth="100dp"
             android:text="@string/longestRoute"
             android:textColor="@color/white"
-android:textSize="24sp" />
-
-        <Button
-            android:id="@+id/globeTrotterButton"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/longestRouteButton"
-            android:layout_alignBottom="@+id/longestRouteButton"
-            android:layout_alignLeft="@+id/manualButton"
-            android:layout_alignRight="@+id/ticket14Button"
-            android:minHeight="100dp"
-            android:minWidth="100dp"
-            android:text="@string/globetrotter"
-            android:textColor="@color/white"
-android:textSize="28sp" />
-
-        <Button
-            android:id="@+id/trainStationButton"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/ticket15Button"
-            android:layout_alignRight="@+id/ticket16Button"
-            android:layout_below="@+id/bonusText"
-            android:minHeight="100dp"
-            android:minWidth="100dp"
-            android:text="@string/trainStations"
-            android:textColor="@color/white"
-android:textSize="28sp" />
-
-        <Button
-            android:id="@+id/minusButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/trainStationButton"
-            android:layout_alignLeft="@+id/ticket17Button"
-            android:layout_alignRight="@+id/ticket18Button"
-            android:background="@drawable/red_button"
-            android:minHeight="100dp"
-            android:minWidth="100dp"
-            android:text="@string/minus"
-            android:textColor="@color/white"
-android:textSize="56sp" />
-
-        <Button
-            android:id="@+id/clearButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/ticket19Button"
-            android:layout_alignRight="@+id/manualButton"
-            android:layout_alignTop="@+id/minusButton"
-            android:background="@drawable/green_button"
-            android:minHeight="100dp"
-            android:minWidth="100dp"
-            android:text="@string/clear"
-            android:textColor="@color/white"
-android:textSize="28sp" />
+            android:textSize="24sp" />
 
         <Button
             android:id="@+id/ticket21Button"
@@ -275,7 +218,7 @@ android:textSize="28sp" />
             android:minWidth="100dp"
             android:text="@string/ticket21"
             android:textColor="@color/white"
-android:textSize="28sp" />
+            android:textSize="28sp" />
 
         <Button
             android:id="@+id/ticket11Button"
@@ -288,7 +231,7 @@ android:textSize="28sp" />
             android:minWidth="100dp"
             android:text="@string/ticket11"
             android:textColor="@color/white"
-android:textSize="28sp" />
+            android:textSize="28sp" />
 
         <Button
             android:id="@+id/ticket2Button"
@@ -302,7 +245,7 @@ android:textSize="28sp" />
             android:minWidth="100dp"
             android:text="@string/ticket2"
             android:textColor="@color/white"
-android:textSize="28sp" />
+            android:textSize="28sp" />
 
         <Button
             android:id="@+id/sixthPlayerButton"
@@ -316,7 +259,7 @@ android:textSize="28sp" />
             android:minWidth="100dp"
             android:text="@string/player6"
             android:textColor="@color/white"
-android:textSize="28sp" />
+            android:textSize="28sp" />
 
         <Button
             android:id="@+id/fifthPlayerButton"
@@ -330,7 +273,7 @@ android:textSize="28sp" />
             android:minWidth="100dp"
             android:text="@string/player5"
             android:textColor="@color/white"
-android:textSize="28sp" />
+            android:textSize="28sp" />
 
         <Button
             android:id="@+id/fourthPlayerButton"
@@ -344,7 +287,7 @@ android:textSize="28sp" />
             android:minWidth="100dp"
             android:text="@string/player4"
             android:textColor="@color/white"
-android:textSize="28sp" />
+            android:textSize="28sp" />
 
         <Button
             android:id="@+id/ticket16Button"
@@ -357,7 +300,7 @@ android:textSize="28sp" />
             android:minWidth="100dp"
             android:text="@string/ticket16"
             android:textColor="@color/white"
-android:textSize="28sp" />
+            android:textSize="28sp" />
 
         <Button
             android:id="@+id/ticket15Button"
@@ -370,7 +313,7 @@ android:textSize="28sp" />
             android:minWidth="100dp"
             android:text="@string/ticket15"
             android:textColor="@color/white"
-android:textSize="28sp" />
+            android:textSize="28sp" />
 
         <Button
             android:id="@+id/ticket13Button"
@@ -383,7 +326,7 @@ android:textSize="28sp" />
             android:minWidth="100dp"
             android:text="@string/ticket13"
             android:textColor="@color/white"
-android:textSize="28sp" />
+            android:textSize="28sp" />
 
         <Button
             android:id="@+id/ticket3Button"
@@ -396,7 +339,7 @@ android:textSize="28sp" />
             android:minWidth="100dp"
             android:text="@string/ticket3"
             android:textColor="@color/white"
-android:textSize="28sp" />
+            android:textSize="28sp" />
 
         <Button
             android:id="@+id/ticket4Button"
@@ -409,7 +352,7 @@ android:textSize="28sp" />
             android:minWidth="100dp"
             android:text="@string/ticket4"
             android:textColor="@color/white"
-android:textSize="28sp" />
+            android:textSize="28sp" />
 
         <Button
             android:id="@+id/ticket14Button"
@@ -422,7 +365,7 @@ android:textSize="28sp" />
             android:minWidth="100dp"
             android:text="@string/ticket14"
             android:textColor="@color/white"
-android:textSize="28sp" />
+            android:textSize="28sp" />
 
         <Button
             android:id="@+id/ticket5Button"
@@ -435,7 +378,7 @@ android:textSize="28sp" />
             android:minWidth="100dp"
             android:text="@string/ticket5"
             android:textColor="@color/white"
-android:textSize="28sp" />
+            android:textSize="28sp" />
 
         <Button
             android:id="@+id/manualButton"
@@ -444,13 +387,13 @@ android:textSize="28sp" />
             android:layout_alignBaseline="@+id/ticket22Button"
             android:layout_alignBottom="@+id/ticket22Button"
             android:layout_alignLeft="@+id/ticket13Button"
-            android:layout_alignRight="@+id/ticket20Button"
+            android:layout_toLeftOf="@+id/minusButton"
             android:background="@drawable/black_button"
             android:minHeight="100dp"
             android:minWidth="100dp"
             android:text="@string/manualentry"
             android:textColor="@color/white"
-android:textSize="28sp" />
+            android:textSize="28sp" />
 
         <TextView
             android:id="@+id/bonusText"
@@ -460,7 +403,7 @@ android:textSize="28sp" />
             android:layout_below="@+id/ticket21Button"
             android:text="@string/bonus"
             android:textColor="@color/white"
-android:textSize="24sp" />
+            android:textSize="24sp" />
 
         <Button
             android:id="@+id/ticket6Button"
@@ -473,7 +416,7 @@ android:textSize="24sp" />
             android:minWidth="100dp"
             android:text="@string/ticket6"
             android:textColor="@color/white"
-android:textSize="28sp" />
+            android:textSize="28sp" />
 
         <Button
             android:id="@+id/ticket7Button"
@@ -486,7 +429,7 @@ android:textSize="28sp" />
             android:minWidth="100dp"
             android:text="@string/ticket7"
             android:textColor="@color/white"
-android:textSize="28sp" />
+            android:textSize="28sp" />
 
         <Button
             android:id="@+id/ticket8Button"
@@ -499,7 +442,7 @@ android:textSize="28sp" />
             android:minWidth="100dp"
             android:text="@string/ticket8"
             android:textColor="@color/white"
-android:textSize="28sp" />
+            android:textSize="28sp" />
 
         <Button
             android:id="@+id/ticket10Button"
@@ -512,7 +455,7 @@ android:textSize="28sp" />
             android:minWidth="100dp"
             android:text="@string/ticket10"
             android:textColor="@color/white"
-android:textSize="28sp" />
+            android:textSize="28sp" />
 
         <Button
             android:id="@+id/ticket9Button"
@@ -525,7 +468,7 @@ android:textSize="28sp" />
             android:minWidth="100dp"
             android:text="@string/ticket9"
             android:textColor="@color/white"
-android:textSize="28sp" />
+            android:textSize="28sp" />
 
         <Button
             android:id="@+id/ticket12Button"
@@ -538,7 +481,7 @@ android:textSize="28sp" />
             android:minWidth="100dp"
             android:text="@string/ticket12"
             android:textColor="@color/white"
-android:textSize="28sp" />
+            android:textSize="28sp" />
 
         <Button
             android:id="@+id/ticket17Button"
@@ -551,7 +494,7 @@ android:textSize="28sp" />
             android:minWidth="100dp"
             android:text="@string/ticket17"
             android:textColor="@color/white"
-android:textSize="28sp" />
+            android:textSize="28sp" />
 
         <Button
             android:id="@+id/ticket18Button"
@@ -565,7 +508,7 @@ android:textSize="28sp" />
             android:minWidth="100dp"
             android:text="@string/ticket18"
             android:textColor="@color/white"
-android:textSize="28sp" />
+            android:textSize="28sp" />
 
         <Button
             android:id="@+id/ticket19Button"
@@ -578,7 +521,7 @@ android:textSize="28sp" />
             android:minWidth="100dp"
             android:text="@string/ticket19"
             android:textColor="@color/white"
-android:textSize="28sp" />
+            android:textSize="28sp" />
 
         <TextView
             android:id="@+id/playerText"
@@ -589,7 +532,7 @@ android:textSize="28sp" />
             android:layout_marginTop="23dp"
             android:text="@string/player"
             android:textColor="@color/white"
-android:textSize="28sp" />
+            android:textSize="28sp" />
 
         <Button
             android:id="@+id/firstPlayerButton"
@@ -604,7 +547,7 @@ android:textSize="28sp" />
             android:minWidth="100dp"
             android:text="@string/player1"
             android:textColor="@color/white"
-android:textSize="28sp" />
+            android:textSize="28sp" />
 
         <Button
             android:id="@+id/ticket20Button"
@@ -617,7 +560,7 @@ android:textSize="28sp" />
             android:minWidth="100dp"
             android:text="@string/ticket20"
             android:textColor="@color/white"
-android:textSize="28sp" />
+            android:textSize="28sp" />
 
         <Button
             android:id="@+id/trains8Button"
@@ -630,7 +573,7 @@ android:textSize="28sp" />
             android:minWidth="100dp"
             android:text="@string/train8"
             android:textColor="@color/white"
-android:textSize="28sp" />
+            android:textSize="28sp" />
 
         <Button
             android:id="@+id/trains9Button"
@@ -644,7 +587,65 @@ android:textSize="28sp" />
             android:minWidth="100dp"
             android:text="@string/train9"
             android:textColor="@color/white"
-android:textSize="28sp" />
+            android:textSize="28sp" />
+
+        <Button
+            android:id="@+id/minusButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/ticket18Button"
+            android:layout_alignRight="@+id/ticket20Button"
+            android:layout_below="@+id/ticket17Button"
+            android:background="@drawable/red_button"
+            android:minHeight="100dp"
+            android:minWidth="100dp"
+            android:text="@string/minus"
+            android:textColor="@color/white"
+            android:textSize="56sp" />
+
+        <Button
+            android:id="@+id/globeTrotterButton"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/longestRouteButton"
+            android:layout_alignBottom="@+id/longestRouteButton"
+            android:layout_alignLeft="@+id/ticket14Button"
+            android:layout_alignRight="@+id/manualButton"
+            android:minHeight="100dp"
+            android:minWidth="100dp"
+            android:text="@string/globetrotter"
+            android:textColor="@color/white"
+            android:textSize="28sp" />
+
+        <Button
+            android:id="@+id/trainStationButton"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/globeTrotterButton"
+            android:layout_alignBottom="@+id/globeTrotterButton"
+            android:layout_alignLeft="@+id/minusButton"
+            android:layout_alignRight="@+id/minusButton"
+            android:minHeight="100dp"
+            android:minWidth="100dp"
+            android:text="@string/trainStations"
+            android:textColor="@color/white"
+            android:textSize="28sp" />
+
+        <Button
+            android:id="@+id/clearButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/reviewButton"
+            android:layout_alignTop="@+id/trainStationButton"
+            android:layout_toRightOf="@+id/trainStationButton"
+            android:background="@drawable/green_button"
+            android:minHeight="100dp"
+            android:minWidth="100dp"
+            android:text="@string/clear"
+            android:textColor="@color/white"
+            android:textSize="28sp" />
 
     </RelativeLayout>
 
