@@ -4,7 +4,6 @@ import java.util.Map;
 
 import android.os.Bundle;
 import android.app.Activity;
-import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -148,13 +147,6 @@ public class ReviewActivity extends Activity {;
         }       
 
         hideSummaryWithNoScores();
-    }
-    
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.review, menu);
-        return true;
     }
     
     public void updateScores(ScoreSummary scoreSummary) {

@@ -11,8 +11,10 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.text.InputType;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.EditorInfo;
@@ -32,6 +34,19 @@ public class MainActivity extends Activity implements OnClickListener {
         setupListenersForTrains();
         setupListenersForTickets();
         setupListenersForBonuses();
+        //PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
+    }
+    
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {        
+        switch (item.getItemId()) {
+        case R.id.action_settings:
+            Intent i = new Intent(this, SettingsActivity.class);
+            startActivity(i);
+            break;
+        }
+ 
+        return true;
     }
 
     private void setupListenersForTrains() {
@@ -108,7 +123,7 @@ public class MainActivity extends Activity implements OnClickListener {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.settings, menu);
         return true;
     }
 
@@ -379,6 +394,19 @@ public class MainActivity extends Activity implements OnClickListener {
     
     public static Map<Button, ScoreSummary> getPlayerScoreMap() {
         return _playerScoreMap;
+    }
+    
+    public boolean hasUniqueCharacters(String str){
+        String seenChars = null;
+        for(int i = 0; i < str.length(); i++) {
+            char c = str.charAt(i);
+            if(seenChars.indexOf(c) > 0) {
+               return false; 
+            }else {
+                seenChars += c;
+            }
+        }
+        return true;
     }
 
     private boolean _subtractionMode = false;
