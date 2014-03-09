@@ -1,8 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <CheckBoxPreference
-        android:key="pref_sync"
-        android:title="pref_sync"
-        android:summary="pref_sync_summ"
-        android:defaultValue="true" />
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/black" >
+
+    <PreferenceCategory
+        android:key="pref_key_color_settings"
+        android:title="@string/pref_colors_title" >
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="pref_key_red_color"
+            android:title="@string/pref_red_color" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="pref_key_green_color"
+            android:title="@string/pref_green_color" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="pref_key_blue_color"
+            android:title="@string/pref_blue_color" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="pref_key_yellow_color"
+            android:title="@string/pref_yellow_color" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="pref_key_purple_color"
+            android:title="@string/pref_purple_color" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="pref_key_black_color"
+            android:title="@string/pref_black_color" />
+    </PreferenceCategory>
+
 </PreferenceScreen>

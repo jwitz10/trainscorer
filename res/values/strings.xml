@@ -69,5 +69,12 @@
     <string name="train7Summary">7 train</string>
     <string name="train8Summary">8 train</string>
     <string name="train9Summary">9 train</string>
+    <string name="pref_colors_title">Player Colors</string>
+    <string name="pref_red_color">Red</string>
+    <string name="pref_green_color">Green</string>
+    <string name="pref_blue_color">Blue</string>
+    <string name="pref_yellow_color">Yellow</string>
+    <string name="pref_purple_color">Purple</string>
+    <string name="pref_black_color">Black</string>
 
 </resources>

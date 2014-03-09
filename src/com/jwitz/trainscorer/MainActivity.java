@@ -2,16 +2,18 @@ package com.jwitz.trainscorer;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.text.InputType;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -34,7 +36,7 @@ public class MainActivity extends Activity implements OnClickListener {
         setupListenersForTrains();
         setupListenersForTickets();
         setupListenersForBonuses();
-        //PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
+        PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
     }
     
     @Override
@@ -47,6 +49,38 @@ public class MainActivity extends Activity implements OnClickListener {
         }
  
         return true;
+    }
+    
+    public void onResume() {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this.getApplicationContext());
+        Map<String, ?> prefs = preferences.getAll();
+        for(String key : prefs.keySet()) {
+            if(key.contains("color")) {
+                boolean visible = preferences.getBoolean(key, true);
+                View v = null;
+                if(key.equals("pref_key_red_color")) {
+                    v = findViewById(R.id.firstPlayerButton);
+                }else if(key.equals("pref_key_green_color")) {
+                    v = findViewById(R.id.secondPlayerButton);
+                }else if(key.equals("pref_key_blue_color")) {
+                    v = findViewById(R.id.thirdPlayerButton);
+                }else if(key.equals("pref_key_yellow_color")) {
+                    v = findViewById(R.id.fourthPlayerButton);
+                }else if(key.equals("pref_key_purple_color")) {
+                    v = findViewById(R.id.fifthPlayerButton);
+                }else if(key.equals("pref_key_black_color")) {
+                    v = findViewById(R.id.sixthPlayerButton);
+                }
+                if(v != null) {
+                    if(visible) {
+                        v.setVisibility(View.VISIBLE);
+                    }else {
+                        v.setVisibility(View.INVISIBLE);
+                    }
+                }
+            }           
+        }
+        super.onResume();
     }
 
     private void setupListenersForTrains() {

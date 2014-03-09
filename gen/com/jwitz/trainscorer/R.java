@@ -228,6 +228,13 @@ public final class R {
         public static final int player4=0x7f070006;
         public static final int player5=0x7f070007;
         public static final int player6=0x7f070008;
+        public static final int pref_black_color=0x7f07004a;
+        public static final int pref_blue_color=0x7f070047;
+        public static final int pref_colors_title=0x7f070044;
+        public static final int pref_green_color=0x7f070046;
+        public static final int pref_purple_color=0x7f070049;
+        public static final int pref_red_color=0x7f070045;
+        public static final int pref_yellow_color=0x7f070048;
         public static final int review=0x7f070034;
         public static final int reviewgame=0x7f070035;
         public static final int scoreSummary=0x7f070039;
