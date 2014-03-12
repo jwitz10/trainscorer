@@ -57,8 +57,8 @@ public class ScoreSummary {
         }
     }
     
-    public void addGlobeTrotter() {
-        _globeTrotter += 10;
+    public void addGlobeTrotter(int globeTrotter) {
+        _globeTrotter += globeTrotter;
     }
     
     public void addLongestRoute() {

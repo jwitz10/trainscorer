@@ -2,7 +2,6 @@ package com.jwitz.trainscorer;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -78,7 +77,83 @@ public class MainActivity extends Activity implements OnClickListener {
                         v.setVisibility(View.INVISIBLE);
                     }
                 }
-            }           
+            }
+            if(key.equals("pref_key_game_type")) {
+                //configure bonuses
+                String value = preferences.getString(key, null);
+                Button globeTrotter = (Button) findViewById(R.id.globeTrotterButton);
+                Button longestRoute = (Button) findViewById(R.id.longestRouteButton);
+                Button trainStation = (Button) findViewById(R.id.trainStationButton);
+                if(value.equals("USA")) {
+                    globeTrotter.setVisibility(View.INVISIBLE);
+                    longestRoute.setVisibility(View.VISIBLE);
+                    trainStation.setVisibility(View.INVISIBLE);
+                }else if(value.equals("USA 1910")) {
+                    globeTrotter.setVisibility(View.VISIBLE);
+                    longestRoute.setVisibility(View.INVISIBLE);
+                    trainStation.setVisibility(View.INVISIBLE);
+                    globeTrotter.setText(R.string.globetrotter15);
+                    _globeTrotterValue = 15;
+                }else if(value.equals("Europe")) {
+                    globeTrotter.setVisibility(View.INVISIBLE);
+                    longestRoute.setVisibility(View.VISIBLE);
+                    trainStation.setVisibility(View.VISIBLE);;
+                }else if(value.equals("Europe 1912")) {
+                    globeTrotter.setVisibility(View.INVISIBLE);
+                    longestRoute.setVisibility(View.VISIBLE);
+                    trainStation.setVisibility(View.VISIBLE);
+                }else if(value.equals("Marklin")) {
+                    globeTrotter.setVisibility(View.VISIBLE);
+                    longestRoute.setVisibility(View.INVISIBLE);
+                    trainStation.setVisibility(View.INVISIBLE);
+                    globeTrotter.setText(R.string.globetrotter);
+                    _globeTrotterValue = 10;
+                }else if(value.equals("Nordic")) {
+                    globeTrotter.setVisibility(View.VISIBLE);
+                    longestRoute.setVisibility(View.INVISIBLE);
+                    trainStation.setVisibility(View.INVISIBLE);
+                    globeTrotter.setText(R.string.globetrotter);
+                    _globeTrotterValue = 10;
+                }else if(value.equals("Team Asia")) {
+                    globeTrotter.setVisibility(View.VISIBLE);
+                    longestRoute.setVisibility(View.VISIBLE);
+                    trainStation.setVisibility(View.INVISIBLE);
+                    globeTrotter.setText(R.string.globetrotter);
+                    _globeTrotterValue = 10;
+                }else if(value.equals("Legendary Asia")) {
+                    globeTrotter.setVisibility(View.INVISIBLE);
+                    longestRoute.setVisibility(View.VISIBLE);
+                    trainStation.setVisibility(View.INVISIBLE);
+                }else if(value.equals("India")) {
+                    globeTrotter.setVisibility(View.INVISIBLE);
+                    longestRoute.setVisibility(View.VISIBLE);
+                    trainStation.setVisibility(View.INVISIBLE);
+                    //grand tour of india
+                    //http://cdn1.daysofwonder.com/tickettoride/en/img/tt_india_rules.pdf
+                }else if(value.equals("Switzerland")) {
+                    globeTrotter.setVisibility(View.INVISIBLE);
+                    longestRoute.setVisibility(View.INVISIBLE);
+                    trainStation.setVisibility(View.INVISIBLE);
+                }else if(value.equals("Africa")) {
+                    globeTrotter.setVisibility(View.VISIBLE);
+                    longestRoute.setVisibility(View.INVISIBLE);
+                    trainStation.setVisibility(View.INVISIBLE);
+                    globeTrotter.setText(R.string.globetrotter);
+                    _globeTrotterValue = 10;
+                }else if(value.equals("Nederland")) {
+                    globeTrotter.setVisibility(View.INVISIBLE);
+                    longestRoute.setVisibility(View.INVISIBLE);
+                    trainStation.setVisibility(View.INVISIBLE);
+                    //bridge tokens bonus
+                    //http://cdn0.daysofwonder.com/tickettoride/en/img/tt_nederland_rules.pdf
+                }else if(value.equals("Custom")) {
+                    globeTrotter.setVisibility(View.VISIBLE);
+                    longestRoute.setVisibility(View.VISIBLE);
+                    trainStation.setVisibility(View.VISIBLE);
+                    globeTrotter.setText(R.string.globetrotter);
+                    _globeTrotterValue = 10;
+                }
+            }
         }
         super.onResume();
     }
@@ -361,7 +436,7 @@ public class MainActivity extends Activity implements OnClickListener {
             alert.show();
             break;
         case R.id.globeTrotterButton:
-            _scoreSummary.addGlobeTrotter();
+            _scoreSummary.addGlobeTrotter(_globeTrotterValue);
             break;
         case R.id.longestRouteButton:
             _scoreSummary.addLongestRoute();
@@ -447,5 +522,6 @@ public class MainActivity extends Activity implements OnClickListener {
     private Button _playerSelected = null;
     private Button _lastPlayerSelected = null;
     private ScoreSummary _scoreSummary = new ScoreSummary(0);
+    private int _globeTrotterValue = 10;
     private static Map<Button, ScoreSummary> _playerScoreMap = new HashMap<Button, ScoreSummary>();
 }

@@ -50,7 +50,8 @@
     <string name="manualentry">Manual Entry</string>
     <string name="bonus">Bonus</string>
     <string name="longestRoute">Longest Route\n(+10)</string>
-    <string name="globetrotter">GlobeTrotter\n(+10)</string>
+    <string name="globetrotter">Most Tickets\n(+10)</string>
+    <string name="globetrotter15">Most Tickets\n(+15)</string>
     <string name="trainStations">Train Station\n(+4)</string>
     <string name="clear">New Game</string>
     <string name="review">Review</string>
@@ -69,12 +70,15 @@
     <string name="train7Summary">7 train</string>
     <string name="train8Summary">8 train</string>
     <string name="train9Summary">9 train</string>
-    <string name="pref_colors_title">Player Colors</string>
+    <string name="pref_colors_title">Colors</string>
     <string name="pref_red_color">Red</string>
     <string name="pref_green_color">Green</string>
     <string name="pref_blue_color">Blue</string>
     <string name="pref_yellow_color">Yellow</string>
     <string name="pref_purple_color">Purple</string>
     <string name="pref_black_color">Black</string>
+    <string name="pref_game_type_settings">Rules</string>
+    <string name="pref_game_type">Map</string>
+    <string name="pref_no_map_selected">No Map Selected</string>
 
 </resources>

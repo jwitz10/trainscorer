@@ -3,6 +3,17 @@
     android:background="@color/black" >
 
     <PreferenceCategory
+        android:key="pref_key_game_type_settings"
+        android:title="@string/pref_game_type_settings" >
+    	<ListPreference
+            android:key="pref_key_game_type"
+            android:entries="@array/gameType"
+            android:entryValues="@array/gameTypeValues"
+            android:title="@string/pref_game_type"
+            android:defaultValue="12"/>
+    </PreferenceCategory>
+    
+    <PreferenceCategory
         android:key="pref_key_color_settings"
         android:title="@string/pref_colors_title" >
         <CheckBoxPreference

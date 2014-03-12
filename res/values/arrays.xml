@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="gameType">
+        <item name="0">USA</item>
+        <item name="1">USA 1910</item>
+        <item name="2">Europe</item>
+        <item name="3">Europe 1912</item>
+        <item name="4">Marklin</item>
+        <item name="5">Nordic</item>
+        <item name="6">Team Asia</item>
+        <item name="7">Legendary Asia</item>
+        <item name="8">India</item>
+        <item name="9">Switzerland</item>
+        <item name="10">Africa</item>
+        <item name="11">Nederland</item>
+        <item name="12">Custom</item>
+    </string-array>
+    <string-array name="gameTypeValues">
+        <item name="0">USA</item>
+        <item name="1">USA 1910</item>
+        <item name="2">Europe</item>
+        <item name="3">Europe 1912</item>
+        <item name="4">Marklin</item>
+        <item name="5">Nordic</item>
+        <item name="6">Team Asia</item>
+        <item name="7">Legendary Asia</item>
+        <item name="8">India</item>
+        <item name="9">Switzerland</item>
+        <item name="10">Africa</item>
+        <item name="11">Nederland</item>
+        <item name="12">Custom</item>
+    </string-array>
+</resources>
