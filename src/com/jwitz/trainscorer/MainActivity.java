@@ -221,10 +221,10 @@ public class MainActivity extends Activity implements OnClickListener {
         String newText;
         if(minus){
             newText = text.replace("-", "+");
-            button.setBackground(getResources().getDrawable(R.drawable.green_button));
+            button.setBackgroundDrawable(getResources().getDrawable(R.drawable.green_button));
         }else {
             newText = text.replace("+", "-");
-            button.setBackground(getResources().getDrawable(R.drawable.red_button));
+            button.setBackgroundDrawable(getResources().getDrawable(R.drawable.red_button));
         }
         button.setText(newText);
     }
@@ -258,7 +258,7 @@ public class MainActivity extends Activity implements OnClickListener {
             shape = getResources().getDrawable(R.drawable.black_button_selected);
             break;
         }
-        _playerSelected.setBackground(shape);
+        _playerSelected.setBackgroundDrawable(shape);
     }
 
     private void updateUnSelectedButton(int viewID) {
@@ -283,7 +283,7 @@ public class MainActivity extends Activity implements OnClickListener {
             shape = getResources().getDrawable(R.drawable.black_button);
             break;
         }
-        _lastPlayerSelected.setBackground(shape);
+        _lastPlayerSelected.setBackgroundDrawable(shape);
     }
 
     @Override
